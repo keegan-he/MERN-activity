@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const activitySchema = new Schema({
     username: { type: String, required: true },
     description: { type: String, required: true },
-    activity_duration: { type: String, required: true },
-    date: { type: String, required: true },
+    activity_duration: { type: Number, required: true },
+    date: { type: Date, required: true },
 }, {
     timestamps: true,
 });
