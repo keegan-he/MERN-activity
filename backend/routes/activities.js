@@ -29,4 +29,4 @@ router.route('/add').post((req, res) => {
         .catch(() => res.status(400).json('Error: ' + err));
 });
 
-module.export = router;
+module.exports = router;
