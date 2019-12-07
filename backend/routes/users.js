@@ -1,6 +1,7 @@
 const router = require('express').Router();
 let User = require('../models/user.model');
 
+//first route - first point that handle http GET requests for /users URL path
 router.route('/').get((req, res) => {
     User.find()
         .then(users => res.json(users))
