@@ -10,6 +10,7 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+//Add activity via activities/add route and save to mongoose
 router.route('/add').post((req, res) => {
     const username = req.body.username;
     const activity_description = req.body.activity_description;
@@ -27,5 +28,21 @@ router.route('/add').post((req, res) => {
         .then(() => res.json('Activity Added!'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
+
+
+//'/:id' is similar to a variable. its an objectID created automatically from MongoDB. Get request for specific activityID and return it as JSON.
+router.route('/:id').get((req, res) => {
+    Activity.findById(req.params.id)
+        .then(activity => res.json(activity))
+        .catch(err => res.status(400).json('Error: ' + err));
+})
+
+//delete activity by MongoID
+router.route('/:id').delete((req, res) => {
+    Activity.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Activity deleted.'))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 
 module.exports = router;
