@@ -4,6 +4,7 @@ const router = require('express').Router();
 //require model:
 let Activity = require('../models/activity.model');
 
+//if route is activities/ the Activity.find() Mongoose command will execute and find all the activities from the database and return them in JSON. If err, throw error. 
 router.route('/').get((req, res) => {
     Activity.find()
         .then(activities => res.json(activities))
