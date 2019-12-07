@@ -13,7 +13,6 @@ router.route('/').get((req, res) => {
 //second routepoint handles http POST requests
 router.route('/add').post((req, res) => {
     const username = req.body.username;
-
     const newUser = new User({
         username
     });
