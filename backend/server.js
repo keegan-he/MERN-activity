@@ -11,7 +11,16 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect(uri, {
+  // Bugfix - (node:45973) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor. Added below.
+
+  useUnifiedTopology: true,
+
+  //works yay!^^
+
+  useNewUrlParser: true,
+  useCreateIndex: true
+});
 
 const connection = mongoose.connection;
 connection.once('open', () => {
