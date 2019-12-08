@@ -30,9 +30,11 @@ connection.once('open', () => {
 //require the files:
 const activitiesRouter = require('./routes/activities');
 const usersRouter = require('./routes/users');
+const urlRouter = require('./routes/urls');
 //use the files. below - everytime a user visits the below routes it will load everything in the activities router. Same with users.
 app.use('/activities', activitiesRouter);
 app.use('/users', usersRouter);
+app.use('/urls', urlRouter)
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
