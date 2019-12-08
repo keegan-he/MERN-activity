@@ -19,7 +19,7 @@ router.route('/add').post((req, res) => {
 
     //save url to mongoDB:
     newUrl.save()
-        .then(() => res.json('Url added!'))
+        .then(() => res.json('URL added to database!'))
         .catch(err => res.status(400).json('Error: ' + err));
 
 })
