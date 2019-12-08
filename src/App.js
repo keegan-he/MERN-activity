@@ -11,9 +11,9 @@ import CreateUser from './components/create-user.component';
 function App() {
   return (
     <Router>
-      <Navbar />
-      <br />
       <div className="container">
+        <Navbar />
+        <br />
         <Route path="/" exact component={ActivityList} />
         <Route path="/edit/:id" component={EditActivity} />
         <Route path="/create" component={CreateActivity} />
