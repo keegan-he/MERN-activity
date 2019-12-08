@@ -44,7 +44,7 @@ router.route('/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-//find Activity by ID and UPDATE in the database
+//find Activity by ID and UPDATE database
 router.route('/update/:id').post((req, res) => {
     Activity.findById(req.params.id)
         .then(activity => {
@@ -58,6 +58,6 @@ router.route('/update/:id').post((req, res) => {
                 .catch(err = res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));
-})
+});
 
 module.exports = router;
