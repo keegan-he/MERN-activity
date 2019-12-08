@@ -55,9 +55,11 @@ router.route('/update/:id').post((req, res) => {
 
             activity.save()
                 .then(() => res.json('Activity Updated!'))
-                .catch(err = res.status(400).json('Error: ' + err));
+                //disabled below - caused error.
+                // .catch(err = res.status(400).json('Error: ' + err));
         })
-        .catch(err => res.status(400).json('Error: ' + err));
+        //disabled below - caused error.
+        // .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;
