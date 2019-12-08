@@ -44,6 +44,7 @@ router.route('/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+//find Activity by ID and UPDATE in the database
 router.route('/update/:id').post((req, res) => {
     Activity.findById(req.params.id)
         .then(activity => {
