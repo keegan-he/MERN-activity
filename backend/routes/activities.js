@@ -37,12 +37,26 @@ router.route('/:id').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 })
 
-//delete activity by MongoID
+//delete Activity by ID, else throw error
 router.route('/:id').delete((req, res) => {
     Activity.findByIdAndDelete(req.params.id)
         .then(() => res.json('Activity deleted.'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/update/:id').post((req, res) => {
+    Activity.findById(req.params.id)
+        .then(activity => {
+            activity.username = req.body.username;
+            activity.activity_description = req.body.activity_description;
+            activity.activity_duration = Number(req.body.activity_duration);
+            activity.date = Date.parse(req.body.date);
+
+            activity.save()
+                .then(() => res.json('Activity Updated!'))
+                .catch(err = res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+})
 
 module.exports = router;
