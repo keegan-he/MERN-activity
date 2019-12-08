@@ -6,7 +6,9 @@ class CreateActivity extends Component {
 
     //bind this to methods in this class//
     this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.onChangeActivityDescription = this.onChangeActivityDescription.bind(this);
+    this.onChangeActivityDescription = this.onChangeActivityDescription.bind(
+      this
+    );
     this.onChangeActivityDuration = this.onChangeActivityDuration.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
 
@@ -17,6 +19,14 @@ class CreateActivity extends Component {
       date: new Date(),
       users: []
     };
+  }
+
+  //hardcode test user for fun
+  componentDidMount() {
+    this.setState({
+      users: ['test user'],
+      username: 'test user'
+    });
   }
 
   onChangeUsername(e) {
