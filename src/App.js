@@ -2,11 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Navbar from './components/navbar.component';
-import ActivityList from './components/activity-list.component';
-import EditActivity from './components/edit-activity.component';
-import CreateActivity from './components/create-activity.component';
-import CreateUser from './components/create-user.component';
+import Navbar from './components/navbar';
+import ActivityList from './components/activity-list';
+import EditActivity from './components/edit-activity';
+import CreateActivity from './components/create-activity';
+import CreateUser from './components/create-user';
 
 function App() {
   return (
