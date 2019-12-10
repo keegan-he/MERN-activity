@@ -4,7 +4,6 @@ class CreateUser extends Component {
   constructor(props) {
     super(props);
 
-    //bind this to methods in this class//
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
@@ -15,7 +14,7 @@ class CreateUser extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      user: e.target.value
+      username: e.target.value
     });
   }
 
@@ -53,7 +52,7 @@ class CreateUser extends Component {
               type="submit"
               value="Create User"
               className="btn btn-primary"
-            ></input>
+            />
           </div>
         </form>
       </div>
