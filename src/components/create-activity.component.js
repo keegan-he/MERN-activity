@@ -72,7 +72,7 @@ class CreateActivity extends Component {
   render() {
     return (
       <div>
-        <h3>Create Your Activity Journal</h3>
+        <h3>Add to your Activity Journal</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Username: </label>
@@ -124,7 +124,7 @@ class CreateActivity extends Component {
           <div className="form-group">
             <input
               type="submit"
-              value="Create Activity Journal"
+              value="Add"
               className="btn btn-primary"
             />
           </div>
