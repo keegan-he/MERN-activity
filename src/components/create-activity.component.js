@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
 
 class CreateActivity extends Component {
   constructor(props) {
