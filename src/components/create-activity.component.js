@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 
 class CreateActivity extends Component {
   constructor(props) {
@@ -8,7 +8,9 @@ class CreateActivity extends Component {
 
     //bind this to methods in this class//
     this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.onChangeActivityDescription = this.onChangeActivityDescription.bind(this);
+    this.onChangeActivityDescription = this.onChangeActivityDescription.bind(
+      this
+    );
     this.onChangeActivityDuration = this.onChangeActivityDuration.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -120,13 +122,8 @@ class CreateActivity extends Component {
               />
             </div>
           </div>
-
           <div className="form-group">
-            <input
-              type="submit"
-              value="Add"
-              className="btn btn-primary"
-            />
+            <input type="submit" value="Add" className="btn btn-primary" />
           </div>
         </form>
       </div>
