@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import axios from 'axios';
 
 class CreateActivity extends Component {
   constructor(props) {
@@ -66,7 +67,13 @@ class CreateActivity extends Component {
       date: this.state.date
     };
 
+    //log activity to console//
     console.log(activity);
+    
+    //post request to database & store activity://
+    axios
+      .post('http://localhost:5000/activity/add', activity)
+      .then(res => console.log(res.data));
 
     window.location = '/';
   }
