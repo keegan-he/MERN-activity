@@ -5,8 +5,11 @@ import axios from 'axios';
 class ActivityList extends Component {
   constructor(props) {
     super(props);
+
   }
-  
+
+
+
   render() {
     return (
       <div>
