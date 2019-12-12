@@ -19,7 +19,7 @@ router.route('/add').post((req, res) => {
 
     //save user to database:
     newUser.save()
-        .then(() => res.json('User added!'))
+        .then(() => res.json('User added to the database!'))
         .catch(err => res.status(400).json('Error: ' + err));
 
 })
