@@ -26,12 +26,14 @@ class CreateUser extends Component {
       username: this.state.username
     };
 
+    //log user
     console.log(user);
 
-    //send user data to backend //
+    //axios post request to users/add and send user object to backend
+    axios
+      .post('http://localhost:5000/users/add', user)
+      .then(res => console.log(res.data));
 
-
-    
     this.setState({
       username: ''
     });
