@@ -25,11 +25,15 @@ class CreateActivity extends Component {
     };
   }
 
-  //hardcode test user for fun
+  //axios get request for users stored in database:
   componentDidMount() {
-    this.setState({
-      users: ['test user'],
-      username: 'test user'
+    axios.get('http://localhost:5000/users/').then(response => {
+      if (response.data.length > 0) {
+        this.setState({
+          users: response.data.map(user => user.username),
+          username: response.data[0].username
+        });
+      }
     });
   }
 
@@ -69,10 +73,10 @@ class CreateActivity extends Component {
 
     //log activity to console//
     console.log(activity);
-    
+
     //post request to database & store activity://
     axios
-      .post('http://localhost:5000/activity/add', activity)
+      .post('http://localhost:5000/activities/add', activity)
       .then(res => console.log(res.data));
 
     window.location = '/';
