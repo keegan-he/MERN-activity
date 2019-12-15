@@ -69,13 +69,13 @@ export default class ActivitiesList extends Component {
   render() {
     return (
       <div>
-        <h3>Logged Exercises</h3>
+        <h3>Activities Log</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
               <th>Username</th>
-              <th>Description</th>
-              <th>Duration</th>
+              <th>Activity Description</th>
+              <th>Activity Duration</th>
               <th>Date</th>
               <th>Actions</th>
             </tr>
