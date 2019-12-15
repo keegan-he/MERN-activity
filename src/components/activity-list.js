@@ -24,7 +24,7 @@ const Activity = props => (
   </tr>
 );
 
-export default class ActivitiesList extends Component {
+class ActivitiesList extends Component {
   constructor(props) {
     super(props);
 
@@ -86,3 +86,5 @@ export default class ActivitiesList extends Component {
     );
   }
 }
+
+export default ActivitiesList;
