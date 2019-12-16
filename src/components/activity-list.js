@@ -7,8 +7,8 @@ import axios from 'axios';
 const Activity = props => (
   <tr>
     <td>{props.activity.username}</td>
-    <td>{props.activity.description}</td>
-    <td>{props.activity.duration}</td>
+    <td>{props.activity.activity_description}</td>
+    <td>{props.activity.activity_duration}</td>
     <td>{props.activity.date.substring(0, 10)}</td>
     <td>
       <Link to={'/edit/' + props.activity._id}>edit</Link> |{' '}
