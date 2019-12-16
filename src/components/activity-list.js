@@ -69,9 +69,9 @@ class ActivitiesList extends Component {
   render() {
     return (
       <div>
-        <h3>Activities Log</h3>
+        <h3></h3>
         <table className="table">
-          <thead className="thead-light">
+          <thead className="thead-dark">
             <tr>
               <th>Username</th>
               <th>Activity Description</th>
